@@ -23,7 +23,7 @@ public class ResponseExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<ExceptionResponseErrors> handleBadRequestException(BadRequestException ex,
             WebRequest request) {
         String[] splitMessages = ex.getMessage().split("\\|");
-        ExceptionResponseErrors response = new ExceptionResponseErrors("Error",
+        ExceptionResponseErrors response = new ExceptionResponseErrors("Parametros incorrectos",
                 "Revise los datos de entrada y vuelva a ejecutar el servicio.",
                 splitMessages);
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
