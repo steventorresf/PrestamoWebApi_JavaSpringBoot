@@ -1,4 +1,4 @@
-package com.prestamofacilweb.exceptions;
+package com.prestamofacilweb.dto.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExceptionResponse {
+public class ExceptionResponseErrors {
     private String Title;
     private String Message;
+    private String[] Errors;
 }

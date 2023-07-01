@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.prestamofacilweb.dto.ClienteDTO;
 import com.prestamofacilweb.dto.ResponseData;
-import com.prestamofacilweb.exceptions.models.UnauthorizedException;
+import com.prestamofacilweb.dto.exceptions.UnauthorizedException;
 import com.prestamofacilweb.service.IClienteService;
 
 import io.swagger.v3.oas.annotations.Operation;

@@ -1,4 +1,4 @@
-package com.prestamofacilweb.exceptions.models;
+package com.prestamofacilweb.dto.exceptions;
 
 public class BadRequestException extends RuntimeException {
 
