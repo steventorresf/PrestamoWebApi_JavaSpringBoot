@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,7 +33,7 @@ public class ClienteController {
             @Parameter(in = ParameterIn.HEADER, name = "Authorization", description = "Jwt - Ejemplo: Bearer {token}", schema = @Schema(type = "string")),
             @Parameter(in = ParameterIn.HEADER, name = "uid", description = "User Id", schema = @Schema(type = "integer"), required = true)
     })
-    @GetMapping(produces = "application/json")
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseData<List<ClienteDTO>> GetAll(@RequestHeader HttpHeaders headers) {
         if (headers.get("uid") == null)
             throw new UnauthorizedException("El 'uid' es requerido");
@@ -46,7 +47,7 @@ public class ClienteController {
             @Parameter(in = ParameterIn.HEADER, name = "Authorization", description = "Jwt - Ejemplo: Bearer {token}", schema = @Schema(type = "string")),
             @Parameter(in = ParameterIn.HEADER, name = "uid", description = "User Id", schema = @Schema(type = "integer"), required = true)
     })
-    @PostMapping(produces = "application/json")
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseData<ClienteDTO> Create(@RequestHeader HttpHeaders headers, @RequestBody ClienteDTO body) {
         ClienteDTO result = _service.Create(body);
         ResponseData<ClienteDTO> response = new ResponseData<ClienteDTO>(result,
